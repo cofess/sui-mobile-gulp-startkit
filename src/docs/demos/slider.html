@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SUI Mobile</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <% include ../_head.html %>
+</head>
+
+<body>
+  <div class="page-group">
+    <div id="page-slider" class="page bg-white">
+      <header class="bar bar-nav">
+        <a class="button button-link button-nav pull-left back" href="/demos">
+          <span class="icon icon-left"></span> 返回
+        </a>
+        <h1 class="title">slider</h1>
+      </header>
+      <div class="content">
+        <div class="content-padded">
+          <p>用来显示和输入百分比数据，如果没有用JS进行初始化，则为只读。</p>
+          <h4>JS初始化</h4>
+          <p>使用 $('#slider').slider() 进行初始化。</p>
+          <p>初始化的时候可以传入一个回调函数，当用户进行滑动操作的时候会触发这个回调函数。</p>
+          <div class="content-block-title">只读</div>
+          <div class="slider">
+            <div class="slider-inner">
+              <div style="width: 30%;" class="slider-track"></div>
+              <div style="left: 30%;" class="slider-handler"></div>
+            </div>
+          </div>
+          <div class="slider slider-info">
+            <div class="slider-inner">
+              <div style="width: 30%;" class="slider-track"></div>
+              <div style="left: 30%;" class="slider-handler"></div>
+            </div>
+          </div>
+          <div class="slider slider-primary">
+            <div class="slider-inner">
+              <div style="width: 30%;" class="slider-track"></div>
+              <div style="left: 30%;" class="slider-handler"></div>
+            </div>
+          </div>
+          <div class="slider slider-danger">
+            <div class="slider-inner">
+              <div style="width: 30%;" class="slider-track"></div>
+              <div style="left: 30%;" class="slider-handler"></div>
+            </div>
+          </div>
+          <div class="slider slider-warning">
+            <div class="slider-inner">
+              <div style="width: 30%;" class="slider-track"></div>
+              <div style="left: 30%;" class="slider-handler"></div>
+            </div>
+          </div>
+          <div class="slider slider-success">
+            <div class="slider-inner">
+              <div style="width: 30%;" class="slider-track"></div>
+              <div style="left: 30%;" class="slider-handler"></div>
+            </div>
+          </div>
+          <div class="content-block-title">可拖动</div>
+          <div class="slider" id='slider1'>
+            <div class="slider-inner">
+              <div style="width: 0;" class="slider-track"></div>
+              <div style="left: 0;" class="slider-handler"></div>
+            </div>
+          </div>
+          <br>
+          <div class="slider-box" id='slider2'>
+            <div class="slider">
+              <div id="sliderInner" class="slider-inner">
+                <div id="sliderTrack" style="width: 75%;" class="slider-track"></div>
+                <div id="sliderHandler" style="left: 75%;" class="slider-handler"></div>
+              </div>
+            </div>
+            <div id="sliderValue" class="slider-value">75</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ../_foot.html %>
+    <script>
+    $('#slider1').slider();
+    $('#slider2').slider(function(per) {
+      console.log(per);
+    });
+    </script>
+</body>
+
+</html>

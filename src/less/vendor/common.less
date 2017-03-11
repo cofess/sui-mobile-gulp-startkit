@@ -720,105 +720,195 @@ img {
   min-width: @width-base*2
 }
 
+
 /**
  * 九宫格
  */
+
 .line-grids {
-    position: relative;
-    overflow: hidden
+  position: relative;
+  overflow: hidden
 }
 
 .line-grids:before {
-    right: 0;
-    height: 1px;
-    border-top: 1px solid #d9d9d9;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    -webkit-transform: scaleY(.5);
-    transform: scaleY(.5)
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #d9d9d9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5)
 }
 
-.line-grids:after,.line-grids:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #d9d9d9
+.line-grids:after,
+.line-grids:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #d9d9d9
 }
 
 .line-grids:after {
-    width: 1px;
-    bottom: 0;
-    border-left: 1px solid #d9d9d9;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    -webkit-transform: scaleX(.5);
-    transform: scaleX(.5)
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid #d9d9d9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleX(.5);
+  transform: scaleX(.5)
 }
 
 .line-grid {
-    position: relative;
-    float: left;
-    padding: 20px 10px;
-    // width: 33.33333333%;
-    text-align: center;
-    box-sizing: border-box
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+  // width: 33.33333333%;
+  text-align: center;
+  box-sizing: border-box
 }
 
 .line-grid:before {
-    top: 0;
-    width: 1px;
-    border-right: 1px solid #d9d9d9;
-    -webkit-transform-origin: 100% 0;
-    transform-origin: 100% 0;
-    -webkit-transform: scaleX(.5);
-    transform: scaleX(.5)
+  top: 0;
+  width: 1px;
+  border-right: 1px solid #d9d9d9;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(.5);
+  transform: scaleX(.5)
 }
 
-.line-grid:after,.line-grid:before {
-    content: " ";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    color: #d9d9d9
+.line-grid:after,
+.line-grid:before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #d9d9d9
 }
 
 .line-grid:after {
-    left: 0;
-    height: 1px;
-    border-bottom: 1px solid #d9d9d9;
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%;
-    -webkit-transform: scaleY(.5);
-    transform: scaleY(.5)
+  left: 0;
+  height: 1px;
+  border-bottom: 1px solid #d9d9d9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5)
 }
 
 .line-grid:active {
-    background-color: #ececec
+  background-color: #ececec
 }
 
 .line-grid .icon {
-    width: 28px;
-    height: 28px;
-    margin: 0 auto
+  width: 28px;
+  height: 28px;
+  margin: 0 auto
 }
 
 .line-grid .icon img {
-    display: block;
-    width: 100%;
-    height: 100%
+  display: block;
+  width: 100%;
+  height: 100%
 }
 
 .line-grid .label {
-    display: block;
-    color: #000;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin-top: 5px;
-    margin-bottom: 0;
-    overflow: hidden
+  display: block;
+  color: #000;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 5px;
+  margin-bottom: 0;
+  overflow: hidden
 }
+
 
 /**
  * flex
  */
+
+
+/**
+ * slider
+ */
+
+.slider {
+  padding: 15px 18px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.slider-inner {
+  position: relative;
+  height: 2px;
+  background-color: #E9E9E9;
+}
+
+.slider-track {
+  height: 2px;
+  background-color: #555;
+  width: 0;
+}
+
+.slider-handler {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  margin-left: -14px;
+  margin-top: -14px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.slider-box .slider {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.slider-value {
+  margin-left: .5em;
+  min-width: 24px;
+  color: #888888;
+  text-align: center;
+  font-size: 14px;
+}
+
+.slider-info {
+  & .slider-track {
+    background-color: @color-info;
+  }
+}
+.slider-primary {
+  & .slider-track {
+    background-color: @color-primary;
+  }
+}
+.slider-danger {
+  & .slider-track {
+    background-color: @color-danger;
+  }
+}
+.slider-warning {
+  & .slider-track {
+    background-color: @color-warning;
+  }
+}
+.slider-success {
+  & .slider-track {
+    background-color: @color-success;
+  }
+}
