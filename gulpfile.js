@@ -69,7 +69,8 @@ gulp.task('js', function(cb) {
     './src/js/router.js',
     './src/js/last-position.js',
     './src/js/init.js',
-    './src/js/scroll-fix.js'
+    './src/js/scroll-fix.js',
+    './src/js/accordion.js'
   ])
     .pipe(concat({ path: 'sm.js'}))
     .pipe(header(banner))
