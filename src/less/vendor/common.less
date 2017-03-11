@@ -4,6 +4,72 @@ img {
 
 
 /**
+ * bar
+ */
+
+.bar-info {
+  background-color: @color-info!important;
+}
+
+.bar-primary {
+  background-color: @color-primary!important;
+}
+
+.bar-danger {
+  background-color: @color-danger!important;
+}
+
+.bar-warning {
+  background-color: @color-warning!important;
+}
+
+.bar-success {
+  background-color: @color-success!important;
+}
+
+.bar-info,
+.bar-info .title,
+.bar-info a,
+.bar-info .button-link,
+.bar-info .tab-item,
+.bar-primary,
+.bar-primary .title,
+.bar-primary a,
+.bar-primary .button-link,
+.bar-primary .tab-item,
+.bar-danger,
+.bar-danger .title,
+.bar-danger a,
+.bar-danger .button-link,
+.bar-danger .tab-item,
+.bar-warning,
+.bar-warning .title,
+.bar-warning a,
+.bar-warning .button-link,
+.bar-warning .tab-item,
+.bar-success,
+.bar-success .title,
+.bar-success a,
+.bar-success .button-link,
+.bar-success .tab-item {
+  color: rgba(255,255,255,.5)  
+}
+
+.bar-info .tab-item.active,
+.bar-info .tab-item:active,
+.bar-primary .tab-item.active,
+.bar-primary .tab-item:active,
+.bar-danger .tab-item.active,
+.bar-danger .tab-item:active,
+.bar-warning .tab-item.active,
+.bar-warning .tab-item:active,
+.bar-success .tab-item.active,
+.bar-success .tab-item:active {
+  color: #e7e7e7
+}
+
+
+/**
  * text-align
  */
 
@@ -892,21 +958,25 @@ img {
     background-color: @color-info;
   }
 }
+
 .slider-primary {
   & .slider-track {
     background-color: @color-primary;
   }
 }
+
 .slider-danger {
   & .slider-track {
     background-color: @color-danger;
   }
 }
+
 .slider-warning {
   & .slider-track {
     background-color: @color-warning;
   }
 }
+
 .slider-success {
   & .slider-track {
     background-color: @color-success;
