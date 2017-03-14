@@ -137,7 +137,7 @@ gulp.task('watch', function() {
 
 gulp.task('server', function() {
   connect.server({
-    root: 'dist',
+    root: './',
     livereload: true
   });
 });
