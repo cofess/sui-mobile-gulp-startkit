@@ -4,11 +4,12 @@
 
 // Type
 // --------------------------------------------------
-@font-family-default: "Helvetica Neue", Helvetica, sans-serif;
-@font-size-default: 0.75rem;
+@font-family-default: "Helvetica Neue", Helvetica, sans-serif; //默认字体
+@font-size-default: 0.75rem; //默认文字大小
+@font-size-title: 0.85rem; //标题问题大小
 @font-weight: 500;
 @font-weight-light: 400;
-@line-height-default: 1.05rem;
+@line-height-default: 1.05rem; //默认文字行高
 
 
 //img
@@ -20,14 +21,15 @@
 
 // 主色
 @color-info: #5bc0de;
-@color-info-light: lighten(@color-info, 10%);
 @color-primary: #0894ec;
-@color-primary-light: lighten(@color-primary, 10%);
 @color-danger: #f6383a;
-@color-danger-light: lighten(@color-danger, 10%);
 @color-warning: #f60;
-@color-warning-light: lighten(@color-warning, 10%);
 @color-success: #4cd964;
+
+@color-info-light: lighten(@color-info, 10%);
+@color-primary-light: lighten(@color-primary, 10%);
+@color-danger-light: lighten(@color-danger, 10%);
+@color-warning-light: lighten(@color-warning, 10%);
 @color-success-light: lighten(@color-success, 10%);
 
 @color-info-active: darken(@color-info, 10%);
@@ -82,6 +84,7 @@
 @border-default: @border-default-width solid @border-default-color;
 @border-radius: 0.3rem;
 
-// Width
+// Width And Height
 // --------------------------------------------------
-@width-base: 0.75rem; 
+@width-base: 0.75rem;
+@height-base: 0.75rem; 

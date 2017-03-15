@@ -347,5 +347,12 @@ $(function () {
     });
   });
 
+  $(document).on("pageInit", "#page-slider", function(e) {
+    $('#slider1').slider();
+    $('#slider2').slider(function(per) {
+      console.log(per);
+    });
+  });
+
   $.init();
 });

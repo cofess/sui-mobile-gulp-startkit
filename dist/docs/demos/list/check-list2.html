@@ -33,71 +33,77 @@
 
 <body>
   <div class="page-group">
-    <div id="page-list" class="page">
+    <div id="page-check-list" class="page">
       <header class="bar bar-nav">
-        <a class="button button-link button-nav pull-left back" href="/demos">
+        <a class="button button-link button-nav pull-left back" href="/demos/list">
           <span class="icon icon-left"></span> 返回
         </a>
-        <h1 class="title">列表</h1>
+        <h1 class="title">可选择列表</h1>
       </header>
       <div class="content">
-        <div class="list-block">
+        <div class="content-block-title">单选</div>
+        <div class="list-block media-list">
           <ul>
             <li>
-              <a href="list/view-list.html" class="item-link item-content">
+              <label class="label-checkbox checkbox-base item-content">
                 <div class="item-inner">
-                  <div class="item-title">视图列表</div>
+                  <div class="item-title">New messages from John Doe</div>
                 </div>
-              </a>
+                <input type="radio" name="my-radio" checked>
+                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              </label>
             </li>
             <li>
-              <a href="list/contacts-list.html" class="item-link item-content">
+              <label class="label-checkbox checkbox-base item-content">
                 <div class="item-inner">
-                  <div class="item-title">联系人列表</div>
+                  <div class="item-title-row">
+                    <div class="item-title">New messages from John Doe</div>
+                  </div>
                 </div>
-              </a>
+                <input type="radio" name="my-radio">
+                <div class="item-media"><i class="icon icon-form-checkbox"></i></div> 
+              </label>
             </li>
             <li>
-              <a href="list/songs-list.html" class="item-link item-content">
+              <label class="label-checkbox checkbox-base item-content">
                 <div class="item-inner">
-                  <div class="item-title">曲目列表</div>
+                  <div class="item-title">New messages from John Doe</div>
                 </div>
-              </a>
+                <input type="radio" name="my-radio">
+                <div class="item-media"><i class="icon icon-form-checkbox"></i></div> 
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="content-block-title">多选</div>
+        <div class="list-block media-list">
+          <ul>
+            <li>
+              <label class="label-checkbox checkbox-base item-content">
+                <div class="item-inner">
+                  <div class="item-title">New messages from John Doe</div>
+                </div>
+                <input type="checkbox" name="checkbox">
+                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              </label>
             </li>
             <li>
-              <a href="list/mail-list.html" class="item-link item-content">
+              <label class="label-checkbox checkbox-base item-content">
                 <div class="item-inner">
-                  <div class="item-title">邮件应用列表</div>
+                  <div class="item-title">New messages from John Doe</div>
                 </div>
-              </a>
+                <input type="checkbox" name="checkbox">
+                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              </label>
             </li>
             <li>
-              <a href="list/simple-list.html" class="item-link item-content">
+              <label class="label-checkbox checkbox-base item-content">
                 <div class="item-inner">
-                  <div class="item-title">简单列表</div>
+                  <div class="item-title">New messages from John Doe</div>
                 </div>
-              </a>
-            </li>
-            <li>
-              <a href="list/inset-list.html" class="item-link item-content">
-                <div class="item-inner">
-                  <div class="item-title">嵌入式列表</div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="list/check-list.html" class="item-link item-content">
-                <div class="item-inner">
-                  <div class="item-title">可选择列表</div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="list/check-list2.html" class="item-link item-content">
-                <div class="item-inner">
-                  <div class="item-title">可选择列表2</div>
-                </div>
-              </a>
+                <input type="checkbox" name="checkbox">
+                <div class="item-media"><i class="icon icon-form-checkbox"></i></div> 
+              </label>
             </li>
           </ul>
         </div>
