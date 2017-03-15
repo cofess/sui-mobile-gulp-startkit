@@ -1,125 +1,173 @@
 //Buttons
 .button {
-    @btn-height: 1.35rem;
-    @btn-big-height: 2.4rem;
-    border: 1px solid @color-primary;
-    color: @color-primary;
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    border-radius: 0.25rem;
-    line-height: (@btn-height - 0.1rem);
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    background: none;
-    padding: 0 0.5rem;
-    margin: 0;
-    height: @btn-height;
-    white-space: nowrap;
-    position: relative;
-    text-overflow:ellipsis;
-    font-size: 0.7rem;
-    font-family: inherit;
-    cursor: pointer;
-    input[type="submit"]&, input[type="button"]&{
-        width: 100%;
-    }
-
+  @btn-height: 1.35rem;
+  @btn-lg-height: 2.2rem;
+  border: 1px solid @color-primary;
+  color: @color-primary;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  border-radius: 0.25rem;
+  line-height: (@btn-height - 0.1rem);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: none;
+  padding: 0.1rem .5rem;
+  margin: 0;
+  // height: @btn-height;
+  white-space: nowrap;
+  position: relative;
+  text-overflow: ellipsis;
+  font-size: 0.7rem;
+  font-family: inherit;
+  cursor: pointer;
+  input[type="submit"]&,
+  input[type="button"]& {
+    width: 100%;
+  }
+  &:active {
+    color: @color-primary-active;
+    border-color: @color-primary-active;
+  }
+  &.button-round {
+    border-radius: (@btn-height - 0.1rem);
+  }
+  &.active {
+    &,
     &:active {
       color: @color-primary-active;
       border-color: @color-primary-active;
     }
-    &.button-round {
-        border-radius: (@btn-height - 0.1rem);
+  }
+  &.button-sm {
+    display: inline-block;
+    font-size: 0.65rem;
+    line-height: (@btn-height - 0.35rem);
+    padding: 0 .35rem;
+  }
+  &.button-md {
+    font-size: 0.75rem;
+    line-height: (@btn-height + 0.1rem);
+  }
+  &.button-lg {
+    font-size: 0.85rem;
+    // height: @btn-lg-height;
+    line-height: (@btn-lg-height - 0.1rem);
+  }
+  &.button-fill {
+    color: #fff;
+    background: @color-primary;
+    border: none;
+    line-height: @btn-height;
+    &.active,
+    &:active {
+      background: @color-primary-active;
     }
-    &.active {
-      &, &:active {
-        color: @color-primary-active;
-        border-color: @color-primary-active;
-      }
+    &.button-lg {
+      line-height: @btn-lg-height;
     }
-    &.button-small {
-        display: inline-block;
-        font-size: 0.65rem;
-        line-height: (@btn-height - 0.1rem);
+  }
+  .button-link {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    color: @color-primary;
+    background-color: transparent;
+    border: 0;
+    &.button-light {
+      color: @color-text-secondary;
     }
-    &.button-big {
-        font-size: 0.85rem;
-        height: @btn-big-height;
-        line-height: (@btn-big-height - 0.1rem);
+    &.button-dark {
+      color: #6e727b;
     }
-    &.button-fill {
-        color:#fff;
-        background: @color-primary;
-        border: none;
-        line-height: @btn-height;
-        &.active, &:active {
-            background: @color-primary-active;
-        }
-        &.button-big {
-          line-height: @btn-big-height;
-        }
+    &.button-success {
+      color: @color-success;
     }
-    .button-link {
-      padding-top: 0.3rem;
-      padding-bottom: 0.3rem;
-      color: @color-primary;
-      background-color: transparent;
-      border: 0;
+    &.button-danger {
+      color: @color-danger;
     }
-    i.icon {
-        &:first-child {
-            margin-right: 0.5rem;
-        }
-        &:last-child {
-            margin-left: 0.5rem;
-        }
-        &:first-child:last-child {
-            margin-left: 0;
-            margin-right: 0;
-        }
+    &.button-warning {
+      color: @color-warning;
     }
+  }
+  i.icon {
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+    &:last-child {
+      margin-left: 0.5rem;
+    }
+    &:first-child:last-child {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 
 .button-variant(@color, @color-active) {
-    border-color: @color;
-    color: @color;
+  border-color: @color;
+  color: @color;
+  &:active {
+    border-color: @color-active;
+    color: @color-active;
+  }
+  &.button-fill {
+    color: white;
+    background-color: @color;
     &:active {
-        border-color: @color-active;
-        color: @color-active;
+      background-color: @color-active;
     }
-    &.button-fill {
-      color: white;
-      background-color: @color;
-      &:active {
-        background-color: @color-active;
-      }
-    }
+  }
 }
+
 .button-themes() {
   &.button-light {
     .button-variant(@color-text-gray-light, @color-primary-active);
     color: @color-text-secondary;
+    &:active,
+    &.active {
+      color: @color-text-secondary;
+      border-color: @color-text-secondary;
+    }
   }
   &.button-dark {
     .button-variant(#6e727b, @color-primary-active);
     color: @color-text-secondary;
+    &:active,
+    &.active {
+      color: #6e727b;
+      border-color: #6e727b;
+    }
   }
   &.button-success {
     .button-variant(@color-success, @color-success-active);
+    &:active,
+    &.active {
+      color: @color-success;
+      border-color: @color-success;
+    }
   }
   &.button-danger {
     .button-variant(@color-danger, @color-danger-active);
+    &:active,
+    &.active {
+      color: @color-danger;
+      border-color: @color-danger;
+    }
   }
   &.button-warning {
     .button-variant(@color-warning, @color-warning-active);
+    &:active,
+    &.active {
+      color: @color-warning;
+      border-color: @color-warning;
+    }
   }
 }
-.button-themes();
 
+.button-themes();
 .button {
   &,
   &.button-primary,
@@ -135,43 +183,83 @@
 
 .buttons-row,
 .buttons-tab {
-    .align-self(center);
-    .flexbox();
-    .flex-wrap(nowrap);
+  .align-self(center);
+  .flexbox();
+  .flex-wrap(nowrap);
 }
 
 .buttons-row {
-    .button {
-        border-radius: 0 0 0 0;
-        margin-left: -1px;
-        width: 100%;
-        -webkit-box-flex:1;
-        -ms-flex:1;
-        border-color: @color-primary;
-        color: @color-primary;
-        &.active {
-          background-color: @color-primary;
-          color: white;
-          z-index: 90;
-        }
-        &:active {
-        }
+  .button {
+    border-radius: 0 0 0 0;
+    margin-left: -1px;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    border-color: @color-primary;
+    color: @color-primary;
+    &.active {
+      background-color: @color-primary;
+      color: white;
+      z-index: 90;
     }
-    .button:first-child {
-        border-radius: 0.25rem 0 0 0.25rem;
-        margin-left: 0;
-        border-left-width: 1px;
-        border-left-style: solid;
+    &:active {}
+  }
+  .button-light {
+    border-color: @color-text-gray-light;
+    color: #6e727b;
+    &.active {
+      background-color: @color-text-gray-light;
+      border-color: @color-text-gray-light;
+      color: #6e727b;
     }
-    .button:last-child {
-        border-radius: 0 0.25rem 0.25rem 0;
+  }
+  .button-dark {
+    border-color: #6e727b;
+    color: #6e727b;
+    &.active {
+      background-color: #6e727b;
+      border-color: #6e727b;
     }
-    .button.button-round:first-child {
-        border-radius: 1.35rem 0 0 1.35rem;
+  }
+  .button-success {
+    border-color: @color-success;
+    color: @color-success;
+    &.active {
+      background-color: @color-success;
+      border-color: @color-success;
     }
-    .button.button-round:last-child {
-        border-radius: 0 1.35rem 1.35rem 0;
+  }
+  .button-danger {
+    border-color: @color-danger;
+    color: @color-danger;
+    &.active {
+      background-color: @color-danger;
+      border-color: @color-danger;
     }
+  }
+  .button-warning {
+    border-color: @color-warning;
+    color: @color-warning;
+    &.active {
+      background-color: @color-warning;
+      border-color: @color-warning;
+    }
+  }
+  .button:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+    margin-left: 0;
+    border-left-width: 1px;
+    border-left-style: solid;
+  }
+  .button:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+  .button.button-round:first-child {
+    border-radius: 1.35rem 0 0 1.35rem;
+  }
+  .button.button-round:last-child {
+    border-radius: 0 1.35rem 1.35rem 0;
+  }
 }
 
 .buttons-tab {
@@ -184,21 +272,50 @@
     width: 100%;
     height: 2rem;
     line-height: 2rem;
-    -webkit-box-flex:1;
-    -ms-flex:1;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     border: 0;
     border-bottom: 2px solid transparent;
     border-radius: 0;
-
     &.active {
       color: @color-primary;
       border-color: @color-primary;
       z-index: 100;
     }
   }
-  
+  .button-light {
+    &.active {
+      color: @color-text-secondary;
+      border-color: @color-text-secondary;
+    }
+  }
+  .button-dark {
+    &.active {
+      color: #6e727b;
+      border-color: #6e727b;
+    }
+  }
+  .button-success {
+    &.active {
+      color: @color-success;
+      border-color: @color-success;
+    }
+  }
+  .button-danger {
+    &.active {
+      color: @color-danger;
+      border-color: @color-danger;
+    }
+  }
+  .button-warning {
+    &.active {
+      color: @color-warning;
+      border-color: @color-warning;
+    }
+  }
 }
-.buttons-fixed{
+
+.buttons-fixed {
   position: fixed;
   z-index: 99;
   width: 100%;

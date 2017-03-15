@@ -2158,9 +2158,8 @@ label.label-checkbox.active-state .item-inner:after {
   -ms-appearance: none;
   appearance: none;
   background: none;
-  padding: 0 0.5rem;
+  padding: 0.1rem .5rem;
   margin: 0;
-  height: 1.35rem;
   white-space: nowrap;
   position: relative;
   text-overflow: ellipsis;
@@ -2184,15 +2183,19 @@ input[type="button"].button {
   color: #0675bb;
   border-color: #0675bb;
 }
-.button.button-small {
+.button.button-sm {
   display: inline-block;
   font-size: 0.65rem;
-  line-height: 1.25rem;
+  line-height: 1rem;
+  padding: 0 .35rem;
 }
-.button.button-big {
+.button.button-md {
+  font-size: 0.75rem;
+  line-height: 1.45rem;
+}
+.button.button-lg {
   font-size: 0.85rem;
-  height: 2.4rem;
-  line-height: 2.3rem;
+  line-height: 2.1rem;
 }
 .button.button-fill {
   color: #fff;
@@ -2204,8 +2207,8 @@ input[type="button"].button {
 .button.button-fill:active {
   background: #0675bb;
 }
-.button.button-fill.button-big {
-  line-height: 2.4rem;
+.button.button-fill.button-lg {
+  line-height: 2.2rem;
 }
 .button .button-link {
   padding-top: 0.3rem;
@@ -2213,6 +2216,21 @@ input[type="button"].button {
   color: #0894ec;
   background-color: transparent;
   border: 0;
+}
+.button .button-link.button-light {
+  color: #5f646e;
+}
+.button .button-link.button-dark {
+  color: #6e727b;
+}
+.button .button-link.button-success {
+  color: #4cd964;
+}
+.button .button-link.button-danger {
+  color: #f6383a;
+}
+.button .button-link.button-warning {
+  color: #f60;
 }
 .button i.icon:first-child {
   margin-right: 0.5rem;
@@ -2240,6 +2258,11 @@ input[type="button"].button {
 .button-light.button-fill:active {
   background-color: #0675bb;
 }
+.button-light:active,
+.button-light.active {
+  color: #5f646e;
+  border-color: #5f646e;
+}
 .button-dark {
   border-color: #6e727b;
   color: #6e727b;
@@ -2256,6 +2279,11 @@ input[type="button"].button {
 .button-dark.button-fill:active {
   background-color: #0675bb;
 }
+.button-dark:active,
+.button-dark.active {
+  color: #6e727b;
+  border-color: #6e727b;
+}
 .button-success {
   border-color: #4cd964;
   color: #4cd964;
@@ -2270,6 +2298,11 @@ input[type="button"].button {
 }
 .button-success.button-fill:active {
   background-color: #2ac845;
+}
+.button-success:active,
+.button-success.active {
+  color: #4cd964;
+  border-color: #4cd964;
 }
 .button-danger {
   border-color: #f6383a;
@@ -2286,6 +2319,11 @@ input[type="button"].button {
 .button-danger.button-fill:active {
   background-color: #f00b0d;
 }
+.button-danger:active,
+.button-danger.active {
+  color: #f6383a;
+  border-color: #f6383a;
+}
 .button-warning {
   border-color: #f60;
   color: #f60;
@@ -2300,6 +2338,11 @@ input[type="button"].button {
 }
 .button-warning.button-fill:active {
   background-color: #cc5200;
+}
+.button-warning:active,
+.button-warning.active {
+  color: #f60;
+  border-color: #f60;
 }
 .button.disabled,
 .button.button-primary.disabled,
@@ -2360,6 +2403,47 @@ input[type="button"].button {
   background-color: #0894ec;
   color: white;
   z-index: 90;
+}
+.buttons-row .button-light {
+  border-color: #ccc;
+  color: #6e727b;
+}
+.buttons-row .button-light.active {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #6e727b;
+}
+.buttons-row .button-dark {
+  border-color: #6e727b;
+  color: #6e727b;
+}
+.buttons-row .button-dark.active {
+  background-color: #6e727b;
+  border-color: #6e727b;
+}
+.buttons-row .button-success {
+  border-color: #4cd964;
+  color: #4cd964;
+}
+.buttons-row .button-success.active {
+  background-color: #4cd964;
+  border-color: #4cd964;
+}
+.buttons-row .button-danger {
+  border-color: #f6383a;
+  color: #f6383a;
+}
+.buttons-row .button-danger.active {
+  background-color: #f6383a;
+  border-color: #f6383a;
+}
+.buttons-row .button-warning {
+  border-color: #f60;
+  color: #f60;
+}
+.buttons-row .button-warning.active {
+  background-color: #f60;
+  border-color: #f60;
 }
 .buttons-row .button:first-child {
   border-radius: 0.25rem 0 0 0.25rem;
@@ -2423,6 +2507,26 @@ input[type="button"].button {
   color: #0894ec;
   border-color: #0894ec;
   z-index: 100;
+}
+.buttons-tab .button-light.active {
+  color: #5f646e;
+  border-color: #5f646e;
+}
+.buttons-tab .button-dark.active {
+  color: #6e727b;
+  border-color: #6e727b;
+}
+.buttons-tab .button-success.active {
+  color: #4cd964;
+  border-color: #4cd964;
+}
+.buttons-tab .button-danger.active {
+  color: #f6383a;
+  border-color: #f6383a;
+}
+.buttons-tab .button-warning.active {
+  color: #f60;
+  border-color: #f60;
 }
 .buttons-fixed {
   position: fixed;
