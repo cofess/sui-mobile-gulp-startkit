@@ -3259,6 +3259,23 @@ input.modal-text-input.modal-text-input-double + input.modal-text-input {
   -webkit-transform: translate3d(0, 100%, 0);
           transform: translate3d(0, 100%, 0);
 }
+.popup-down {
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+}
+.popup-down.modal-in,
+.popup-down.modal-out {
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+}
+.popup-down.modal-in {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.popup-down.modal-out {
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+}
 .login-screen.modal-in,
 .login-screen.modal-out {
   display: block;
