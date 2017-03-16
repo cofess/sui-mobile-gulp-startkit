@@ -8370,6 +8370,7 @@ Device/OS Detection
 
         options: {
             parentSelector: '[data-stick-parent]',
+            parentClass: 'has-stick',
             addCss: true,
             offset:0,
             type:"top"

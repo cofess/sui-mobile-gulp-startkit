@@ -17,7 +17,7 @@
         </a>
         <h1 class='title'>固定Stick</h1>
       </header>
-      <div class="content">
+      <div class="content clearfix">
         <div class="content-inner">
           <div class="list-block" data-stick-parent>
             <div class="block clearfix" data-stick-top>
@@ -345,6 +345,7 @@
         root: '.content',
         parentClass: 'has-stick',
         addCss: true,
+        offset:'2.2rem',
         type: "top"
       });
       $('[data-stick-bottom]').stickUp({
