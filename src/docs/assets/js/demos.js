@@ -354,5 +354,20 @@ $(function () {
     });
   });
 
+  // $(document).on("pageInit", "#page-stick", function(e) {
+  //   $('[data-stick-top]').stickUp({
+  //     root: '.content',
+  //     parentClass: 'has-stick',
+  //     addCss: true,
+  //     type: "top"
+  //   });
+  //   $('[data-stick-bottom]').stickUp({
+  //     root: '.content',
+  //     parentClass: 'has-stick',
+  //     addCss: true,
+  //     type: "bottom"
+  //   });
+  // });
+
   $.init();
 });
