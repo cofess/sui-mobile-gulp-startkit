@@ -5947,6 +5947,50 @@ img {
 .icon.icon-fill.icon-warning {
   background: #f60;
 }
+/**
+ * content
+ */
+.content-fixed.content-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.content-fixed.content-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/**
+ * divider
+ */
+.divider {
+  position: relative;
+  margin: 1.5em auto;
+  line-height: 1.6em;
+  text-align: center;
+}
+.divider:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-bottom: 1px dashed #e7e7e7;
+  z-index: 0;
+}
+.divider.divider-line:after {
+  border-bottom: 1px solid #e7e7e7;
+}
+.divider .label {
+  position: relative;
+  display: inline-block;
+  padding: 0 .55em;
+  background-color: #fff;
+  vertical-align: middle;
+  z-index: 1;
+}
 .tip,
 .dot {
   position: relative;
