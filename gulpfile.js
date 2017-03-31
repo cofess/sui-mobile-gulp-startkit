@@ -1,17 +1,18 @@
 "use strict";
-var pkg = require("./package.json");
+var pkg             = require("./package.json");
 
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var header = require('gulp-header');
-var connect = require("gulp-connect");
-var less = require("gulp-less");
-var autoprefixer = require('gulp-autoprefixer');
-var ejs = require("gulp-ejs");
-var uglify = require('gulp-uglify');
-var ext_replace = require('gulp-ext-replace');
-var cssmin = require('gulp-cssmin');
-var runSequence = require('run-sequence');
+var gulp            = require('gulp');
+var concat          = require('gulp-concat');
+var header          = require('gulp-header');
+var browserSync     = require('browser-sync');
+var less            = require("gulp-less");
+var autoprefixer    = require('gulp-autoprefixer');
+var ejs             = require("gulp-ejs");
+var uglify          = require('gulp-uglify');
+var ext_replace     = require('gulp-ext-replace');
+var cssmin          = require('gulp-cssmin');
+var runSequence     = require('run-sequence');
+// var connect      = require("gulp-connect");
 
 
 
@@ -72,6 +73,7 @@ gulp.task('js', function(cb) {
       './src/js/scroll-fix.js',
       './src/js/accordion.js',
       './src/js/vendor/data.zepto.js',
+      './src/js/vendor/pixelRatio.js',
       './src/js/vendor/slider.js',
       './src/js/vendor/stickUp.js'
     ])
@@ -135,14 +137,28 @@ gulp.task('watch', function() {
   gulp.watch('src/js/**/*.js', ['js']);
   gulp.watch('src/less/**/*.less', ['less', 'cssmin']);
   gulp.watch('src/docs/**/*.html', ['ejs']);
+  browserSync.reload;
 });
 
+// gulp.task('server', function() {
+//   connect.server({
+//     root: './',
+//     livereload: true
+//   });
+// });
+
+/**
+ * Run the build task and start a server with BrowserSync
+ */
 gulp.task('server', function() {
-  connect.server({
-    root: './',
-    livereload: true
+  browserSync.init({
+    server: {
+      baseDir: "./"
+    },
+    port: 8080
   });
 });
+
 // gulp.task("default", ['watch', 'server']);
 // gulp.task("build", ['uglify', 'cssmin', 'copy', 'ejs', 'docs']);
 gulp.task('default', function(callback) {

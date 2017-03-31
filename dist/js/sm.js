@@ -8287,6 +8287,26 @@ Device/OS Detection
     })
 })(Zepto);
 
+/*===========================
+Device/OS Detection
+===========================*/
+;(function ($) {
+    "use strict";
+    if (navigator.userAgent.toUpperCase().indexOf('IPHONE OS') !== -1) return; // IOS会缩放，不处理
+    var classNames = [];
+    var pixelRatio = window.devicePixelRatio || 1;
+    classNames.push('pixel-ratio-' + Math.floor(pixelRatio));
+    if (pixelRatio >= 2) {
+        classNames.push('retina');
+    }
+
+    var html = document.getElementsByTagName('html')[0];
+
+    classNames.forEach(function (className) {
+        html.classList.add(className);
+    });
+})(Zepto);
+
 /* global $:true */
 + function($) {
   "use strict";
@@ -8364,7 +8384,8 @@ Device/OS Detection
  * (c) 2016 Alexander Flöter
  * stickyInParent.zepto.js may be freely distributed under the MIT license.
  */
-;(function ($) {
+;
+(function($) {
 
     var myObject = {
 
@@ -8372,8 +8393,8 @@ Device/OS Detection
             parentSelector: '[data-stick-parent]',
             parentClass: 'has-stick',
             addCss: true,
-            offset:0,
-            type:"top"
+            offset: 0,
+            type: "top"
         },
 
         /**
@@ -8382,7 +8403,7 @@ Device/OS Detection
          * @param elem
          * @returns {myObject}
          */
-        init: function (options, elem) {
+        init: function(options, elem) {
 
             // Mix in the passed-in options with the default options
             this.options = $.extend({}, this.options, options);
@@ -8391,15 +8412,15 @@ Device/OS Detection
             this.$elem = $(elem);
             this.$parent = this.$elem.closest(this.options.parentSelector);
             // this.$win = $(window);
-            if(this.options.root!=false){
+            if (this.options.root != null && this.options.root != false) {
                 this.$win = $(this.options.root);
-            }else{
+            } else {
                 this.$win = $(window);
             }
-            
+
             // Initial calculation
             this._calculate(this);
-            this._position(this);            
+            this._position(this);
 
             // Add event handlers
             this._addEventHandlers();
@@ -8417,11 +8438,11 @@ Device/OS Detection
          * @returns {Function}
          * @private
          */
-        _throttle: function (fn, threshhold, scope) {
+        _throttle: function(fn, threshhold, scope) {
             threshhold = threshhold || 250;
             var last,
                 deferTimer;
-            return function () {
+            return function() {
                 var context = scope || this;
 
                 var now = +new Date(),
@@ -8429,7 +8450,7 @@ Device/OS Detection
                 if (last && now < last + threshhold) {
                     // hold on to it
                     clearTimeout(deferTimer);
-                    deferTimer = setTimeout(function () {
+                    deferTimer = setTimeout(function() {
                         last = now;
                         fn.apply(context, args);
                     }, threshhold);
@@ -8445,7 +8466,7 @@ Device/OS Detection
          * @param $this
          * @private
          */
-        _calculate: function ($this) {
+        _calculate: function($this) {
 
             // Remove styles
             $this.$elem.removeAttr('style');
@@ -8463,7 +8484,7 @@ Device/OS Detection
             };
 
             // Add base style to element
-            if(this.options.addCss!=false){
+            if (this.options.addCss != false) {
                 $this.$elem.css({
                     width: $this.options.eOffset.width,
                     height: $this.options.eOffset.height
@@ -8477,7 +8498,7 @@ Device/OS Detection
          * @param that
          * @private
          */
-        _position: function (that) {
+        _position: function(that) {
 
             // 参数说明
             // that.$win.scrollTop() : 滚动条高度
@@ -8492,51 +8513,44 @@ Device/OS Detection
             // console.log("wayPoints.to:"+that.options.wayPoints.to);
             // console.log(that.options.eOffset.height,that.options.eOffset.top,that.options.pOffset.height,that.options.pOffset.top);
             // console.log(sT,sT-that.options.eOffset.top-that.options.eOffset.height);
-            if(that.options.type=="bottom"){
+            if (that.options.type == "bottom") {
                 //判断父级元素是否在视窗内
-                if(sT+document.documentElement.clientHeight>=that.options.pOffset.top && sT+document.documentElement.clientHeight<that.options.pOffset.top+that.options.pOffset.height){
-                    if(that.options.addCss!=false){
+                if (sT + document.documentElement.clientHeight >= that.options.pOffset.top && sT + document.documentElement.clientHeight < that.options.pOffset.top + that.options.pOffset.height) {
+                    if (that.options.addCss != false) {
                         that.$elem.css({
                             position: 'fixed',
                             top: 'auto',
-                            bottom:that.options.pPadding.bottom+that.options.offset,
+                            bottom: that.options.pPadding.bottom + that.options.offset,
                             left: that.options.eOffset.left,
                             width: that.options.eOffset.width
                         })
                     }
-                    that.$elem.addClass('stick stick-bottom');
-                }else{
-                    if(that.options.addCss!=false){
+                    that.$elem.addClass('stick bottom');
+                } else {
+                    if (that.options.addCss != false) {
                         that.$elem.removeAttr('style');
                     }
-                    that.$elem.removeClass('stick stick-bottom');
+                    that.$elem.removeClass('stick bottom');
                 }
-            }else{
+            } else {
                 // Stick within paren
-                if (sT > that.options.pOffset.top && sT+that.options.pOffset.top<that.options.pOffset.top+that.options.pOffset.height) {
-                    if(that.options.addCss!=false){
+                if (sT > that.options.pOffset.top && sT + that.options.pOffset.top < that.options.pOffset.top + that.options.pOffset.height) {
+                    if (that.options.addCss != false) {
                         that.$elem.css({
                             position: 'fixed',
-                            top: that.options.pPadding.top+that.options.offset,
-                            bottom:'auto',
+                            top: that.options.pPadding.top + that.options.offset,
+                            bottom: 'auto',
                             left: that.options.eOffset.left,
                             width: that.options.eOffset.width
-                        })                   
+                        })
                     }
-                    that.$elem.addClass('stick stick-top');            
-                }
-
-                // Top of parent
-                else {
-                    if(that.options.addCss!=false){
-                        // that.$elem.css({
-                        //     position: 'absolute',
-                        //     top: that.options.pPadding.top,
-                        //     left: that.options.eOffset.left - that.options.pOffset.left
-                        // })
+                    that.$elem.addClass('stick top');
+                } else {
+                    // Top of parent
+                    if (that.options.addCss != false) {
                         that.$elem.removeAttr('style');
                     }
-                    that.$elem.removeClass('stick stick-top');
+                    that.$elem.removeClass('stick top');
                 }
             }
 
@@ -8547,11 +8561,11 @@ Device/OS Detection
          * @param that
          * @private
          */
-        _hasStick: function (that) {
+        _hasStick: function(that) {
 
-            if(this.$parent.find('.stick').length>0 && that.options.parentClass!=false){
+            if (this.$parent.find('.stick').length > 0 && that.options.parentClass != false) {
                 this.$parent.addClass(that.options.parentClass);
-            }else{
+            } else {
                 this.$parent.removeClass(that.options.parentClass);
             }
         },
@@ -8561,12 +8575,12 @@ Device/OS Detection
          * Attach event handlers to $(window)
          * @private
          */
-        _addEventHandlers: function () {
+        _addEventHandlers: function() {
 
             var that = this;
 
             // Event function
-            var fn = function (e) {
+            var fn = function(e) {
 
                 // Recalculate on resize
                 if (e.type == 'resize') {
@@ -8577,7 +8591,7 @@ Device/OS Detection
                 that._position(that);
 
                 // has stick element
-                that._hasStick(that);                
+                that._hasStick(that);
 
             };
 
@@ -8589,9 +8603,8 @@ Device/OS Detection
 
     // Object.create support test, and fallback for browsers without it
     if (typeof Object.create !== "function") {
-        Object.create = function (o) {
-            function F() {
-            }
+        Object.create = function(o) {
+            function F() {}
 
             F.prototype = o;
             return new F();
@@ -8599,9 +8612,9 @@ Device/OS Detection
     }
 
     // Create a plugin based on a defined object
-    $.plugin = function (name, object) {
-        $.fn[name] = function (options) {
-            return this.each(function () {
+    $.plugin = function(name, object) {
+        $.fn[name] = function(options) {
+            return this.each(function() {
                 if (!$.data(this, name)) {
                     $.data(this, name, Object.create(object).init(
                         options, this));

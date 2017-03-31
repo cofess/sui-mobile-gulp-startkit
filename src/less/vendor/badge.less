@@ -1,118 +1,409 @@
-.tip,
-.dot {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 100%;
-  font-size: .6rem;
-}
-
-
 /*圆形徽章*/
 
 .tip {
-  width: 1.0rem;
-  height: 1.0rem;
-  line-height: 1.0rem;
-  color: @color-text;
-  background-color: rgba(0, 0, 0, .15);
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 100%;
+    font-size: .6rem;
+}
+
+.tip {
+    width: 1.0rem;
+    height: 1.0rem;
+    line-height: 1.0rem;
+    color: @color-text;
+    background-color: rgba(0, 0, 0, .15);
 }
 
 
 /*小点点*/
 
 .tip-dot {
-  height: 0.5rem;
-  width: 0.5rem;
-  font-size: 0;
-  text-indent: -9999rem;
+    height: 0.45rem;
+    width: 0.45rem;
+    font-size: 0;
+    text-indent: -9999rem;
 }
 
 
 /*小竖条*/
 
 .peg {
-  display: inline-block;
-  width: 4px;
-  height: 16px;
-  background-color: @color-primary;
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    background-color: @color-primary;
 }
 
 
 /*标签贴*/
 
-.sticker {
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  border-width: 0;
-  border-style: solid;
-  color: @color-text;
-  border-color: rgba(0, 0, 0, .15);
-  span {
+.marker {
     position: absolute;
-    font-size: 0.65rem;
-    padding: 0 2px;
-  }
-  &.top,
-  &.top span {
-    top: 0;
-  }
-  &.top {
-    border-top-width: 32px;
-  }
-  &.top span {
-    min-width: 30px;
-    margin-top: -30px;
-  }
-  &.left,
-  &.left span {
-    left: 0;
-  }
-  &.left {
-    border-right-width: 56px;
-    border-right-color: transparent;
-  }
-  &.right,
-  &.right span {
-    right: 0;
-    text-align: right;
-  }
-  &.right {
-    border-left-width: 56px;
-    border-left-color: transparent;
-  }
-  &.bottom,
-  &.bottom span {
-    bottom: 0;
-  }
-  &.bottom {
-    border-bottom-width: 32px;
-  }
-  &.bottom span {
-    margin-bottom: -30px;
-  }
+    width: 0px;
+    height: 0px;
+    border-width: 0;
+    border-style: solid;
+    color: @color-text;
+    border-color: rgba(0, 0, 0, .15);
+    z-index: 9;
+    &.marker-info {
+        color: #fff;
+        border-color: @color-info;
+    }
+    &.marker-primary {
+        color: #fff;
+        border-color: @color-primary;
+    }
+    &.marker-danger {
+        color: #fff;
+        border-color: @color-danger;
+    }
+    &.marker-warning {
+        color: #fff;
+        border-color: @color-warning;
+    }
+    &.marker-success {
+        color: #fff;
+        border-color: @color-success;
+    }
+    span {
+        position: absolute;
+        font-size: 50%;
+        padding: 0 0.1rem;
+    }
+    &.top {
+        top: 0;
+        border-top-width: 1.6rem;
+        span {
+            top: 0;
+            min-width: 1.5rem;
+            margin-top: -1.5rem;
+        }
+    }
+    &.left {
+        left: 0;
+        border-right-width: 2.8rem;
+        border-right-color: transparent;
+        span {
+            left: 0;
+        }
+    }
+    &.right {
+        right: 0;
+        text-align: right;
+        border-left-width: 2.8rem;
+        border-left-color: transparent;
+        span {
+            right: 0;
+            text-align: right;
+        }
+    }
+    &.bottom {
+        bottom: 0;
+        border-bottom-width: 1.6rem;
+        span {
+            bottom: 0;
+            margin-bottom: -1.5rem;
+        }
+    }
+    &.marker-icon {
+        &.top {
+            border-top-width: 1.4rem;
+            span {
+                margin-top: -1.3rem;
+            }
+        }
+        &.left {
+            border-right-width: 1.4rem;
+        }
+        &.right {
+            border-left-width: 1.4rem;
+        }
+        &.bottom {
+            border-bottom-width: 1.4rem;
+            span {
+                margin-bottom: -1.3rem;
+            }
+        }
+    }
+    &.marker-base {
+        span {
+            display: none;
+        }
+        &.top {
+            border-top-width: 0.6rem;
+        }
+        &.left {
+            border-right-width: 0.6rem;
+        }
+        &.right {
+            border-left-width: 0.6rem;
+        }
+        &.bottom {
+            border-bottom-width: 0.6rem;
+        }
+    }
 }
 
-.sticker.sticker-icon {
-  &.top {
-    border-top-width: 28px;
-  }
-  &.top span {
-    margin-top: -26px;
-  }
-  &.left {
-    border-right-width: 28px;
-  }
-  &.right {
-    border-left-width: 28px;
-  }
-  &.bottom {
-    border-bottom-width: 28px;
-  }
+
+/**
+ * ribbon
+ */
+
+// .ribbon {
+//     position: relative;
+//     min-height: 56px
+// }
+.ribbon {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    padding: 0 15px;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    z-index: 500;
+    &:before {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        content: ""
+    }
+    &.ribbon-info {
+        background-color: @color-info
+    }
+    &.ribbon-primary {
+        background-color: @color-primary
+    }
+    &.ribbon-warning {
+        background-color: @color-warning
+    }
+    &.ribbon-danger {
+        background-color: @color-danger
+    }
+    &.ribbon-success {
+        background-color: @color-success
+    }
+    &.left {
+        right: auto;
+        left: 0
+    }
+    &.right {
+        right: 0;
+        left: auto
+    }
+    &.bottom {
+        top: auto;
+        bottom: 10px
+    }
+    &.bottom {
+        top: 10px;
+        bottom: auto
+    }
+    &.ribbon-bookmark {
+        padding-left: 0;
+        &:before {
+            top: 0;
+            right: 100%;
+            border: 18px solid;
+            border-left-width: 10px
+        }
+        &.left {
+            padding-left: 15px;
+            padding-right: 0
+        }
+        &.left:before {
+            right: auto;
+            left: 100%;
+            border-left-width: 18px;
+            border-right-width: 10px
+        }
+        &.ribbon-primary:before {
+            border-color: @color-primary;
+            border-left-color: transparent
+        }
+        &.ribbon-primary.left:before {
+            border-color: @color-primary;
+            border-right-color: transparent
+        }
+    }
+    &.ribbon-modern {
+        top: 0;
+        &:before {
+            top: 0;
+            right: 100%;
+            border: 18px solid
+        }
+        &.left:before {
+            right: auto;
+            left: 100%
+        }
+        // &.bottom {
+        //     bottom: 0
+        // }
+        &.ribbon-primary:before {
+            border-color: @color-primary;
+            border-left-color: transparent;
+            border-bottom-color: transparent
+        }
+        &.ribbon-primary.bottom :before {
+            border-color: @color-primary;
+            border-top-color: transparent;
+            border-left-color: transparent
+        }
+        &.ribbon-primary.left:before {
+            border-color: @color-primary;
+            border-right-color: transparent;
+            border-bottom-color: transparent
+        }
+        &.ribbon-primary.left.bottom:before {
+            border-color: @color-primary;
+            border-top-color: transparent;
+            border-right-color: transparent
+        }
+    }
+}
+
+.ribbon-success.ribbon-bookmark .ribbon:before {
+    border-color: #46c37b;
+    border-left-color: transparent
+}
+
+.ribbon-success.ribbon-bookmark.ribbon-left .ribbon:before {
+    border-color: #46c37b;
+    border-right-color: transparent
+}
+
+.ribbon-success.ribbon-modern .ribbon:before {
+    border-color: #46c37b;
+    border-left-color: transparent;
+    border-bottom-color: transparent
+}
+
+.ribbon-success.ribbon-modern.ribbon-bottom .ribbon:before {
+    border-color: #46c37b;
+    border-top-color: transparent;
+    border-left-color: transparent
+}
+
+.ribbon-success.ribbon-modern.ribbon-left .ribbon:before {
+    border-color: #46c37b;
+    border-right-color: transparent;
+    border-bottom-color: transparent
+}
+
+.ribbon-success.ribbon-modern.ribbon-left.ribbon-bottom .ribbon:before {
+    border-color: #46c37b;
+    border-top-color: transparent;
+    border-right-color: transparent
+}
+
+.ribbon-info.ribbon-bookmark .ribbon:before {
+    border-color: #70b9eb;
+    border-left-color: transparent
+}
+
+.ribbon-info.ribbon-bookmark.ribbon-left .ribbon:before {
+    border-color: #70b9eb;
+    border-right-color: transparent
+}
+
+.ribbon-info.ribbon-modern .ribbon:before {
+    border-color: #70b9eb;
+    border-left-color: transparent;
+    border-bottom-color: transparent
+}
+
+.ribbon-info.ribbon-modern.ribbon-bottom .ribbon:before {
+    border-color: #70b9eb;
+    border-top-color: transparent;
+    border-left-color: transparent
+}
+
+.ribbon-info.ribbon-modern.ribbon-left .ribbon:before {
+    border-color: #70b9eb;
+    border-right-color: transparent;
+    border-bottom-color: transparent
+}
+
+.ribbon-info.ribbon-modern.ribbon-left.ribbon-bottom .ribbon:before {
+    border-color: #70b9eb;
+    border-top-color: transparent;
+    border-right-color: transparent
+}
+
+.ribbon-warning.ribbon-bookmark .ribbon:before {
+    border-color: #f3b760;
+    border-left-color: transparent
+}
+
+.ribbon-warning.ribbon-bookmark.ribbon-left .ribbon:before {
+    border-color: #f3b760;
+    border-right-color: transparent
+}
+
+.ribbon-warning.ribbon-modern .ribbon:before {
+    border-color: #f3b760;
+    border-left-color: transparent;
+    border-bottom-color: transparent
+}
+
+.ribbon-warning.ribbon-modern.ribbon-bottom .ribbon:before {
+    border-color: #f3b760;
+    border-top-color: transparent;
+    border-left-color: transparent
+}
+
+.ribbon-warning.ribbon-modern.ribbon-left .ribbon:before {
+    border-color: #f3b760;
+    border-right-color: transparent;
+    border-bottom-color: transparent
+}
+
+.ribbon-warning.ribbon-modern.ribbon-left.ribbon-bottom .ribbon:before {
+    border-color: #f3b760;
+    border-top-color: transparent;
+    border-right-color: transparent
+}
+
+.ribbon-danger.ribbon-bookmark .ribbon:before {
+    border-color: #d26a5c;
+    border-left-color: transparent
+}
+
+.ribbon-danger.ribbon-bookmark.ribbon-left .ribbon:before {
+    border-color: #d26a5c;
+    border-right-color: transparent
+}
+
+.ribbon-danger.ribbon-modern .ribbon:before {
+    border-color: #d26a5c;
+    border-left-color: transparent;
+    border-bottom-color: transparent
+}
+
+.ribbon-danger.ribbon-modern.ribbon-bottom .ribbon:before {
+    border-color: #d26a5c;
+    border-top-color: transparent;
+    border-left-color: transparent
+}
+
+.ribbon-danger.ribbon-modern.ribbon-left .ribbon:before {
+    border-color: #d26a5c;
+    border-right-color: transparent;
+    border-bottom-color: transparent
+}
+
+.ribbon-danger.ribbon-modern.ribbon-left.ribbon-bottom .ribbon:before {
+    border-color: #d26a5c;
+    border-top-color: transparent;
+    border-right-color: transparent
 }
 
 
@@ -120,30 +411,40 @@
  * badge
  */
 
-.badge-info,.tip-info {
-  background-color: @color-info!important;
+.badge-info,
+.tip-info {
+    background-color: @color-info!important;
 }
 
-.badge-primary,.tip-primary {
-  background-color: @color-primary!important;
+.badge-primary,
+.tip-primary {
+    background-color: @color-primary!important;
 }
 
-.badge-danger,.tip-danger {
-  background-color: @color-danger!important;
+.badge-danger,
+.tip-danger {
+    background-color: @color-danger!important;
 }
 
-.badge-warning,.tip-warning {
-  background-color: @color-warning!important;
+.badge-warning,
+.tip-warning {
+    background-color: @color-warning!important;
 }
 
-.badge-success,.tip-success {
-  background-color: @color-success!important;
+.badge-success,
+.tip-success {
+    background-color: @color-success!important;
 }
 
-.badge-info,.tip-info,
-.badge-primary,.tip-primary,
-.badge-danger,.tip-danger,
-.badge-warning,.tip-warning,
-.badge-success,.tip-success {
-  color: #fff
+.badge-info,
+.tip-info,
+.badge-primary,
+.tip-primary,
+.badge-danger,
+.tip-danger,
+.badge-warning,
+.tip-warning,
+.badge-success,
+.tip-success {
+    color: #fff
 }

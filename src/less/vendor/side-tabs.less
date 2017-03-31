@@ -1,19 +1,16 @@
 /* === side-tab === */
 
 .side-tab {
-  display: block!important;
-}
+    display: block!important;
+    .hairline-remove(bottom);
+    .button {
+        border-left: 2px solid transparent;
+        border-bottom: 0px solid transparent!important;
+        &.active {
+            background-color: #fff;
+        }
+        &:after{
 
-.side-tab .button {
-  border-left: 2px solid transparent;
-  border-bottom: 0px solid transparent!important;
-}
-
-.side-tab .button.active {
-  background-color: #fff;
-}
-
-.side-tab .button.active {
-  color: @color-primary!important;
-  border-color: @color-primary!important;
+        }
+    }
 }
