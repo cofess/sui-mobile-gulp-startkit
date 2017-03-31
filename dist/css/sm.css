@@ -6231,12 +6231,44 @@ img {
   border-left-width: 18px;
   border-right-width: 10px;
 }
+.ribbon.ribbon-bookmark.ribbon-info:before {
+  border-color: #5bc0de;
+  border-left-color: transparent;
+}
+.ribbon.ribbon-bookmark.ribbon-info.left:before {
+  border-color: #5bc0de;
+  border-right-color: transparent;
+}
 .ribbon.ribbon-bookmark.ribbon-primary:before {
   border-color: #0894ec;
   border-left-color: transparent;
 }
 .ribbon.ribbon-bookmark.ribbon-primary.left:before {
   border-color: #0894ec;
+  border-right-color: transparent;
+}
+.ribbon.ribbon-bookmark.ribbon-warning:before {
+  border-color: #f60;
+  border-left-color: transparent;
+}
+.ribbon.ribbon-bookmark.ribbon-warning.left:before {
+  border-color: #f60;
+  border-right-color: transparent;
+}
+.ribbon.ribbon-bookmark.ribbon-danger:before {
+  border-color: #f6383a;
+  border-left-color: transparent;
+}
+.ribbon.ribbon-bookmark.ribbon-danger.left:before {
+  border-color: #f6383a;
+  border-right-color: transparent;
+}
+.ribbon.ribbon-bookmark.ribbon-success:before {
+  border-color: #4cd964;
+  border-left-color: transparent;
+}
+.ribbon.ribbon-bookmark.ribbon-success.left:before {
+  border-color: #4cd964;
   border-right-color: transparent;
 }
 .ribbon.ribbon-modern {
@@ -6251,12 +6283,32 @@ img {
   right: auto;
   left: 100%;
 }
+.ribbon.ribbon-modern.ribbon-info:before {
+  border-color: #5bc0de;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.ribbon.ribbon-modern.ribbon-info.bottom:before {
+  border-color: #5bc0de;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon.ribbon-modern.ribbon-info.left:before {
+  border-color: #5bc0de;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+.ribbon.ribbon-modern.ribbon-info.left.bottom:before {
+  border-color: #5bc0de;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
 .ribbon.ribbon-modern.ribbon-primary:before {
   border-color: #0894ec;
   border-left-color: transparent;
   border-bottom-color: transparent;
 }
-.ribbon.ribbon-modern.ribbon-primary.bottom :before {
+.ribbon.ribbon-modern.ribbon-primary.bottom:before {
   border-color: #0894ec;
   border-top-color: transparent;
   border-left-color: transparent;
@@ -6271,115 +6323,63 @@ img {
   border-top-color: transparent;
   border-right-color: transparent;
 }
-.ribbon-success.ribbon-bookmark .ribbon:before {
-  border-color: #46c37b;
-  border-left-color: transparent;
-}
-.ribbon-success.ribbon-bookmark.ribbon-left .ribbon:before {
-  border-color: #46c37b;
-  border-right-color: transparent;
-}
-.ribbon-success.ribbon-modern .ribbon:before {
-  border-color: #46c37b;
+.ribbon.ribbon-modern.ribbon-warning:before {
+  border-color: #f60;
   border-left-color: transparent;
   border-bottom-color: transparent;
 }
-.ribbon-success.ribbon-modern.ribbon-bottom .ribbon:before {
-  border-color: #46c37b;
+.ribbon.ribbon-modern.ribbon-warning.bottom:before {
+  border-color: #f60;
   border-top-color: transparent;
   border-left-color: transparent;
 }
-.ribbon-success.ribbon-modern.ribbon-left .ribbon:before {
-  border-color: #46c37b;
+.ribbon.ribbon-modern.ribbon-warning.left:before {
+  border-color: #f60;
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
-.ribbon-success.ribbon-modern.ribbon-left.ribbon-bottom .ribbon:before {
-  border-color: #46c37b;
+.ribbon.ribbon-modern.ribbon-warning.left.bottom:before {
+  border-color: #f60;
   border-top-color: transparent;
   border-right-color: transparent;
 }
-.ribbon-info.ribbon-bookmark .ribbon:before {
-  border-color: #70b9eb;
-  border-left-color: transparent;
-}
-.ribbon-info.ribbon-bookmark.ribbon-left .ribbon:before {
-  border-color: #70b9eb;
-  border-right-color: transparent;
-}
-.ribbon-info.ribbon-modern .ribbon:before {
-  border-color: #70b9eb;
+.ribbon.ribbon-modern.ribbon-danger:before {
+  border-color: #f6383a;
   border-left-color: transparent;
   border-bottom-color: transparent;
 }
-.ribbon-info.ribbon-modern.ribbon-bottom .ribbon:before {
-  border-color: #70b9eb;
+.ribbon.ribbon-modern.ribbon-danger.bottom:before {
+  border-color: #f6383a;
   border-top-color: transparent;
   border-left-color: transparent;
 }
-.ribbon-info.ribbon-modern.ribbon-left .ribbon:before {
-  border-color: #70b9eb;
+.ribbon.ribbon-modern.ribbon-danger.left:before {
+  border-color: #f6383a;
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
-.ribbon-info.ribbon-modern.ribbon-left.ribbon-bottom .ribbon:before {
-  border-color: #70b9eb;
+.ribbon.ribbon-modern.ribbon-danger.left.bottom:before {
+  border-color: #f6383a;
   border-top-color: transparent;
   border-right-color: transparent;
 }
-.ribbon-warning.ribbon-bookmark .ribbon:before {
-  border-color: #f3b760;
-  border-left-color: transparent;
-}
-.ribbon-warning.ribbon-bookmark.ribbon-left .ribbon:before {
-  border-color: #f3b760;
-  border-right-color: transparent;
-}
-.ribbon-warning.ribbon-modern .ribbon:before {
-  border-color: #f3b760;
+.ribbon.ribbon-modern.ribbon-success:before {
+  border-color: #4cd964;
   border-left-color: transparent;
   border-bottom-color: transparent;
 }
-.ribbon-warning.ribbon-modern.ribbon-bottom .ribbon:before {
-  border-color: #f3b760;
+.ribbon.ribbon-modern.ribbon-success.bottom:before {
+  border-color: #4cd964;
   border-top-color: transparent;
   border-left-color: transparent;
 }
-.ribbon-warning.ribbon-modern.ribbon-left .ribbon:before {
-  border-color: #f3b760;
+.ribbon.ribbon-modern.ribbon-success.left:before {
+  border-color: #4cd964;
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
-.ribbon-warning.ribbon-modern.ribbon-left.ribbon-bottom .ribbon:before {
-  border-color: #f3b760;
-  border-top-color: transparent;
-  border-right-color: transparent;
-}
-.ribbon-danger.ribbon-bookmark .ribbon:before {
-  border-color: #d26a5c;
-  border-left-color: transparent;
-}
-.ribbon-danger.ribbon-bookmark.ribbon-left .ribbon:before {
-  border-color: #d26a5c;
-  border-right-color: transparent;
-}
-.ribbon-danger.ribbon-modern .ribbon:before {
-  border-color: #d26a5c;
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-}
-.ribbon-danger.ribbon-modern.ribbon-bottom .ribbon:before {
-  border-color: #d26a5c;
-  border-top-color: transparent;
-  border-left-color: transparent;
-}
-.ribbon-danger.ribbon-modern.ribbon-left .ribbon:before {
-  border-color: #d26a5c;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-}
-.ribbon-danger.ribbon-modern.ribbon-left.ribbon-bottom .ribbon:before {
-  border-color: #d26a5c;
+.ribbon.ribbon-modern.ribbon-success.left.bottom:before {
+  border-color: #4cd964;
   border-top-color: transparent;
   border-right-color: transparent;
 }
