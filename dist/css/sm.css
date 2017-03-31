@@ -6418,11 +6418,35 @@ img {
   transition-property: bottom;
   z-index: -1;
 }
+.badges.left {
+  right: auto;
+  left: 0;
+}
+.badges.left:before {
+  border-width: 5px 5px 0 0;
+  right: auto;
+  left: 0;
+}
+.badges.bottom {
+  top: auto;
+  bottom: 3px;
+}
+.badges.bottom:before {
+  top: -4px;
+  bottom: auto;
+  border-width: 0 0 5px 5px;
+}
+.badges.left.bottom:before {
+  border-width: 0 5px 5px 0;
+}
 .badges.badges-info {
   background-color: #5bc0de;
 }
 .badges.badges-info:before {
   border-color: #5bc0de transparent transparent transparent;
+}
+.badges.badges-info.bottom:before {
+  border-color: transparent transparent #5bc0de transparent;
 }
 /**
  * badge

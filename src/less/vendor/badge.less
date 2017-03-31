@@ -411,11 +411,39 @@
     transition-property: bottom;
     z-index: -1
   }
+  &.left {
+    right: auto;
+    left: 0;
+    &:before {
+      border-width: 5px 5px 0 0;
+      right: auto;
+      left: 0;
+    }
+  }
+  &.bottom {
+    top: auto;
+    bottom: 3px;
+    &:before {
+      top: -4px;
+      bottom: auto;
+      border-width: 0 0 5px 5px;
+    }
+  }
+  &.left.bottom {
+    &:before {
+      border-width: 0 5px 5px 0;
+    }
+  }
   &.badges-info {
     background-color: @color-info;
-  }
-  &.badges-info:before {
-    border-color: @color-info transparent transparent transparent
+    &:before {
+      border-color: @color-info transparent transparent transparent
+    }
+    &.bottom {
+      &:before {
+        border-color: transparent transparent @color-info transparent
+      }
+    }
   }
 }
 
