@@ -163,6 +163,8 @@
   height: 36px;
   line-height: 36px;
   color: #fff;
+  // color: @color-text;
+  // background-color: rgba(0, 0, 0, .15);
   z-index: 500;
   &:before {
     position: absolute;
@@ -194,13 +196,13 @@
     right: 0;
     left: auto
   }
+  &.top {
+    top: 10px;
+    bottom: auto
+  }
   &.bottom {
     top: auto;
     bottom: 10px
-  }
-  &.bottom {
-    top: 10px;
-    bottom: auto
   }
   &.ribbon-bookmark {
     padding-left: 0;
@@ -212,13 +214,13 @@
     }
     &.left {
       padding-left: 15px;
-      padding-right: 0
-    }
-    &.left:before {
-      right: auto;
-      left: 100%;
-      border-left-width: 18px;
-      border-right-width: 10px
+      padding-right: 0;
+      &:before {
+        right: auto;
+        left: 100%;
+        border-left-width: 18px;
+        border-right-width: 10px
+      }
     }
     &.ribbon-info:before {
       border-color: @color-info;
@@ -272,9 +274,10 @@
       right: auto;
       left: 100%
     }
-    // &.bottom {
-    //     bottom: 0
-    // }
+    &.bottom {
+      top: auto;
+      bottom: 0;
+    }
     &.ribbon-info:before {
       border-color: @color-info;
       border-left-color: transparent;
@@ -375,6 +378,44 @@
       border-top-color: transparent;
       border-right-color: transparent
     }
+  }
+}
+
+
+/**
+ * 
+ */
+
+.badges {
+  color: #FFFFFF;
+  font-size: 10px;
+  height: 15px;
+  line-height: 16px;
+  padding: 0 5px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  top: 3px;
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
+  &:before {
+    border-style: solid;
+    border-width: 5px 0 0 5px;
+    bottom: -4px;
+    content: "";
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    transition-duration: 0.3s;
+    transition-property: bottom;
+    z-index: -1
+  }
+  &.badges-info {
+    background-color: @color-info;
+  }
+  &.badges-info:before {
+    border-color: @color-info transparent transparent transparent
   }
 }
 
