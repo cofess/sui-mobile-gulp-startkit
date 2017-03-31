@@ -6448,6 +6448,42 @@ img {
 .badges.badges-info.bottom:before {
   border-color: transparent transparent #5bc0de transparent;
 }
+.badges.badges-primary {
+  background-color: #0894ec;
+}
+.badges.badges-primary:before {
+  border-color: #0894ec transparent transparent transparent;
+}
+.badges.badges-primary.bottom:before {
+  border-color: transparent transparent #0894ec transparent;
+}
+.badges.badges-danger {
+  background-color: #f6383a;
+}
+.badges.badges-danger:before {
+  border-color: #f6383a transparent transparent transparent;
+}
+.badges.badges-danger.bottom:before {
+  border-color: transparent transparent #f6383a transparent;
+}
+.badges.badges-warning {
+  background-color: #f60;
+}
+.badges.badges-warning:before {
+  border-color: #f60 transparent transparent transparent;
+}
+.badges.badges-warning.bottom:before {
+  border-color: transparent transparent #f60 transparent;
+}
+.badges.badges-success {
+  background-color: #4cd964;
+}
+.badges.badges-success:before {
+  border-color: #4cd964 transparent transparent transparent;
+}
+.badges.badges-success.bottom:before {
+  border-color: transparent transparent #4cd964 transparent;
+}
 /**
  * badge
  */
